@@ -8,7 +8,7 @@ create table medicine (
     medname varchar(20),
     price numeric(10,2),
     quantity numeric(8));
-```    
+```     
 
    Query OK, 0 rows affected (0.03 sec)
 
