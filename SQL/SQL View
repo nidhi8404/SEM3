@@ -39,6 +39,27 @@ mysql> select * from client_view;
 +-----------------+-----------+----------+
 6 rows in set (0.00 sec)
 
+Q)UPDATE View
+
+mysql> update client_view
+    -> set name='Nidhi Shinde'
+    -> where client_no = 'C001';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from client_view;
++-----------+-----------------+----------+
+| client_no | name            | bal_due  |
++-----------+-----------------+----------+
+| C001      | Nidhi Shinde    | 15000.00 |
+| C002      | Vandana Saitwal |     0.00 |
+| C003      | Pramada Jaguste |  5000.00 |
+| C004      | Basu Navindgi   |     0.00 |
+| C005      | Ravi Sreedharam |  2000.00 |
+| C006      | Rukmini         |     0.00 |
++-----------+-----------------+----------+
+6 rows in set (0.00 sec)
+
 Q) To DROP View
 
 mysql> drop view client_view;
