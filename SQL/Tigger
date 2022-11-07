@@ -1,6 +1,7 @@
 SQL Trigger
 
 ##Create Table
+
 ```sql
 create table medicine (
     mid numeric(3),
@@ -8,6 +9,7 @@ create table medicine (
     price numeric(10,2),
     quantity numeric(8));
 ```    
+
     Query OK, 0 rows affected (0.03 sec)
 
 mysql> insert into medicine (mid,medname,price,quantity)
