@@ -1,6 +1,6 @@
-SQL Trigger
+##SQL Trigger
 
-##Create Table
+## Create Table
 
 ```sql
 create table medicine (
@@ -10,7 +10,7 @@ create table medicine (
     quantity numeric(8));
 ```    
 
-    Query OK, 0 rows affected (0.03 sec)
+   Query OK, 0 rows affected (0.03 sec)
 
 mysql> insert into medicine (mid,medname,price,quantity)
     -> values(1,'Crocin',500.60,25),
