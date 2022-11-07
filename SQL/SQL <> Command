@@ -1,0 +1,41 @@
+SQL <> Command
+
+Q) Find all name whose bal_due > 500
+mysql> select * from client_master
+    -> where client_no in (select client_no from client_master where bal_due >500);
++-----------+-----------------+----------+----------+--------+---------+-------------+----------+
+| Client_no | Name            | Address1 | Address2 | City   | Pincode | State       | Bal_due  |
++-----------+-----------------+----------+----------+--------+---------+-------------+----------+
+| C001      | Ivan Bayross    |          |          | Bombay |  400054 | Maharashtra | 15000.00 |
+| C003      | Pramada Jaguste |          |          | Bombay |  400057 | Maharashtra |  5000.00 |
+| C005      | Ravi Sreedharam |          |          | Delhi  |  110001 |             |  2000.00 |
++-----------+-----------------+----------+----------+--------+---------+-------------+----------+
+3 rows in set (0.00 sec)
+
+Q)Find all name whose bal_due < 500
+mysql> select * from client_master
+    -> where client_no in (select client_no from client_master where bal_due <500);
++-----------+-----------------+----------+----------+--------+---------+-------------+---------+
+| Client_no | Name            | Address1 | Address2 | City   | Pincode | State       | Bal_due |
++-----------+-----------------+----------+----------+--------+---------+-------------+---------+
+| C002      | Vandana Saitwal |          |          | Madras |  780001 | Tamil Nadu  |    0.00 |
+| C004      | Basu Navindgi   |          |          | Bombay |  400056 | Maharashtra |    0.00 |
+| C006      | Rukmini         |          |          | Bombay |  400050 | Maharashtra |    0.00 |
++-----------+-----------------+----------+----------+--------+---------+-------------+---------+
+3 rows in set (0.00 sec)
+
+
+client_master table :-
+mysql> select * from client_master
+    -> ;
++-----------+-----------------+----------+----------+--------+---------+-------------+----------+
+| Client_no | Name            | Address1 | Address2 | City   | Pincode | State       | Bal_due  |
++-----------+-----------------+----------+----------+--------+---------+-------------+----------+
+| C001      | Ivan Bayross    |          |          | Bombay |  400054 | Maharashtra | 15000.00 |
+| C002      | Vandana Saitwal |          |          | Madras |  780001 | Tamil Nadu  |     0.00 |
+| C003      | Pramada Jaguste |          |          | Bombay |  400057 | Maharashtra |  5000.00 |
+| C004      | Basu Navindgi   |          |          | Bombay |  400056 | Maharashtra |     0.00 |
+| C005      | Ravi Sreedharam |          |          | Delhi  |  110001 |             |  2000.00 |
+| C006      | Rukmini         |          |          | Bombay |  400050 | Maharashtra |     0.00 |
++-----------+-----------------+----------+----------+--------+---------+-------------+----------+
+6 rows in set (0.00 sec)
