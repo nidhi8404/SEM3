@@ -1,1 +1,54 @@
+SQL Trigger
 
+##Create Table
+```sql
+create table medicine (
+    mid numeric(3),
+    medname varchar(20),
+    price numeric(10,2),
+    quantity numeric(8));
+```    
+    Query OK, 0 rows affected (0.03 sec)
+
+mysql> insert into medicine (mid,medname,price,quantity)
+    -> values(1,'Crocin',500.60,25),
+    -> (2,'Calpol',355.90,30);
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from medicine;
++------+---------+--------+----------+
+| mid  | medname | price  | quantity |
++------+---------+--------+----------+
+|    1 | Crocin  | 500.60 |       25 |
+|    2 | Calpol  | 355.90 |       30 |
++------+---------+--------+----------+
+2 rows in set (0.00 sec)
+
+mysql> create table neworder(
+    -> mid numeric(8),
+    -> odate date,
+    -> mewquantity numeric(11));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> describe neworder;
++-------------+---------------+------+-----+---------+-------+
+| Field       | Type          | Null | Key | Default | Extra |
++-------------+---------------+------+-----+---------+-------+
+| mid         | decimal(8,0)  | YES  |     | NULL    |       |
+| odate       | date          | YES  |     | NULL    |       |
+| mewquantity | decimal(11,0) | YES  |     | NULL    |       |
++-------------+---------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> delimiter $$
+mysql> create trigger neworderformedicine
+    -> after update on medicine
+    -> for each row
+    -> begin
+    -> if new.quantity < 20 then
+    -> insert into neworder values(new.mid,sysdate(),200);
+    -> end if;
+    -> end;
+    -> $$
+Query OK, 0 rows affected (0.01 sec)
