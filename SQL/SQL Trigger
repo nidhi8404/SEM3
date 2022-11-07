@@ -1,11 +1,91 @@
-## SQL Trigger
+SQL Trigger(go to 40)
 
-##Create Table
-
-```sql
+->Create Table
 create table medicine (
     mid numeric(3),
     medname varchar(20),
     price numeric(10,2),
-    quantity numeric(8));
-```    
+    quantity numeric(8));   
+
+->Insert Values
+insert into medicine (mid,medname,price,quantity)
+    values(1,'Crocin',500.60,25),
+    (2,'Calpol',355.90,30);
+    
+mysql> select * from medicine;
++------+---------+--------+----------+
+| mid  | medname | price  | quantity |
++------+---------+--------+----------+
+|    1 | Crocin  | 500.60 |       25 |
+|    2 | Calpol  | 355.90 |       30 |
++------+---------+--------+----------+
+2 rows in set (0.00 sec)    
+
+->Create one more table
+create table neworder(
+     mid numeric(8),
+     odate date,
+     mewquantity numeric(11));
+     
+mysql> describe neworder;
++-------------+---------------+------+-----+---------+-------+
+| Field       | Type          | Null | Key | Default | Extra |
++-------------+---------------+------+-----+---------+-------+
+| mid         | decimal(8,0)  | YES  |     | NULL    |       |
+| odate       | date          | YES  |     | NULL    |       |
+| mewquantity | decimal(11,0) | YES  |     | NULL    |       |
++-------------+---------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+->CREATE TRIGGER
+delimiter $$
+create trigger neworderformedicine
+     after update on medicine
+     for each row
+     begin
+     if new.quantity < 20 then //condition 
+     insert into neworder values(new.mid,sysdate(),200);
+     end if;
+     end;
+    $$
+
+->update medicine
+update medicine
+    set quantity = 5 where mid = 1;
+    $$
+    
+mysql> select * from medicine;
+    -> $$
++------+---------+--------+----------+
+| mid  | medname | price  | quantity |
++------+---------+--------+----------+
+|    1 | Crocin  | 500.60 |        5 |
+|    2 | Calpol  | 355.90 |       30 |
++------+---------+--------+----------+
+
+mysql> select * from neworder;
+    -> $$
++------+------------+-------------+
+| mid  | odate      | mewquantity |
++------+------------+-------------+
+|    1 | 2022-11-07 |         200 |
++------+------------+-------------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
