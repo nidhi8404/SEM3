@@ -38,3 +38,8 @@ mysql> select * from client_view;
 | Rukmini         | C006      |     0.00 |
 +-----------------+-----------+----------+
 6 rows in set (0.00 sec)
+
+Q) To DROP View
+
+mysql> drop view client_view;
+Query OK, 0 rows affected (0.01 sec)
