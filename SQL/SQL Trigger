@@ -1,0 +1,11 @@
+## SQL Trigger
+
+##Create Table
+
+```sql
+create table medicine (
+    mid numeric(3),
+    medname varchar(20),
+    price numeric(10,2),
+    quantity numeric(8));
+```    
