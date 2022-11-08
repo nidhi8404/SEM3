@@ -1,6 +1,6 @@
-##Area of Triangle
+# Area of Triangle
 
-##EQUILATERAL TRIANGLE
+## EQUILATERAL TRIANGLE
 ```
 area:-
    write('Enter the length of side of equilateral triangle:'),
@@ -9,7 +9,7 @@ area:-
     A is (sqrt(3)*Lside*Lside/4),
     write(A).
 ```
-##ISOCELES TRIANGLE
+## ISOCELES TRIANGLE
 ```
 area:-
    write('Enter the length of 1st side of isoceles triangle:'),
@@ -22,7 +22,7 @@ area:-
     write(A).
 ```
 
-##TRIANGLE 
+## TRIANGLE 
 ```
 area:-
    write('Enter the length of 1st side of triangle:'),
