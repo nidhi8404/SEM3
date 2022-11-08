@@ -1,4 +1,4 @@
-#Area of Triangle
+##Area of Triangle
 
 ##EQUILATERAL TRIANGLE
 ```
