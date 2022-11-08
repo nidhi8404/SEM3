@@ -35,4 +35,4 @@ area:-
     S is (S1+S1+S3)/2,
     A is (sqrt(S*(S-S1)*(S-S2)*(S-S3))),
     write(A). 
-    ```
+```
