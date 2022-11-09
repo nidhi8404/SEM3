@@ -37,7 +37,7 @@ select s.Product_no,p.Description, sum(s.Qty_ordered)
 +------------+---------------+-------------------+
 7 rows in set (0.00 sec)
 
-##Find the product_no and description of non-moving products (eg. products not being sold).
+## Find the product_no and description of non-moving products (eg. products not being sold).
 ```
 select product_no , description
     from product_master
