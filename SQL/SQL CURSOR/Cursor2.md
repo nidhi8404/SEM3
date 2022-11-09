@@ -1,4 +1,4 @@
-Tables and Continued [SQL/SQL TRIGGER/Trigger2.md](https://github.com/nidhi8404/SEM3/blob/main/SQL/SQL%20TRIGGER/Trigger2.md)
+Tables are Continued from [SQL/SQL TRIGGER/Trigger2.md](https://github.com/nidhi8404/SEM3/blob/main/SQL/SQL%20TRIGGER/Trigger2.md)
 ```
 alter table person add column email varchar(50);
     $$
@@ -39,7 +39,7 @@ select * from person;
 
 +----+---------+----------+-----------------+
 
-# create cursor
+# Create cursor
 ```
 CREATE procedure build_email_list(INOUT email_list varchar(400))
 BEGIN
