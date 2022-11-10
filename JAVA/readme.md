@@ -1,6 +1,5 @@
 ## OOP [Object-Oriented Programming]
-Procedural programming is about writing procedures or methods that perform operations on the data, 
-while object-oriented programming is about creating objects that contain both data and methods.
+Is about creating objects that contain both data and methods.
 
 ## Java Classes/Objects
 Everything in Java is associated with classes and objects, along with its attributes and methods. 
